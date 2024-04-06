@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>Blooket Bot</title>
+    <style>
+      .normtext {
+        font-size: 40px;
+        color: #fff;
+        text-align: left;
+        margin-left: 1px;
+        font-family: Titan One, sans-serif;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        text-decoration: none;
+      }
+
+      .codecontainer {
+        margin: 5px;
+      }
+
+      .btext {
+        font-size: 140%;
+        color: #5f5f5f;
+        -webkit-user-select: none;
+      }
+      #ctrlpanel {
+	margin:9px;
+	}
+.inputcontainer {
+    background-color: orange;
+    display: inline-block;
+    border-radius: 4px;
+    user-select: none;
+    cursor: pointer;
+}
+.inputcontainer > div {
+    font-size: 23px;
+    text-align: center;
+}
+.inputcontainer > input {
+    margin: 4px;
+    text-align: center;
+    font-size: 18px;
+}
+.inputcontainer > select {
+    margin: 4px;
+    text-align: center;
+    font-size: 18px;
+}
+button {
+font-size: 23px;
+}
+.cheatcontainer > * {
+    margin: 15px;
+}
+checkbox {
+    background-color: white;
+    font-size: 30px;
+    margin: 2px;
+    user-select: none;
+    cursor: pointer;
+    font-family: Titan One, sans-serif;
+    padding-right: 2px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+checkbox::before {
+content: "X";
+font-weight: lighter;
+}
+checkbox[checked]::before {
+   content: "✔";
+}
+    </style>
+  </head>
+  <body>
+    <div class="_body_di4r2_71" style="z-index:0;background-color: rgb(9, 148, 65);overflow: hidden;">
+      <div class="codecontainer" id="cc">
+        <div class="normtext">Enter code:</div>
+        <div class="_idInputContainer_1mkqb_63">
+          <input id="gcode" class="_idInput_1mkqb_63" placeholder="Game ID">
+        </div>
+	<div class="_nameInputContainer_1pk02_71">
+          <input id="gname" class="_nameInput_1pk02_71" placeholder="Nickname">
+        </div>
+        <div class="_joinButton_1mkqb_87" onclick="join();" role="button">
+          <div class="btext">Join</div>
+        </div>
+	<!--<button onclick="brosOcr();">Get Best Bros Game Id(BETA)</button><br>-->
+	<text class="normtext" style="display:none;" id="ostatus"></text>
+	<text class="normtext">First Place Switch:</text><checkbox id="fpswitch" checked="true"></checkbox><br>
+  <text class="normtext">*for first place switch to work your amount must not be a number!</text>
+      </div>
+      <div id="ctrlpanel"></div>
+    <div class="normtext" id="status">Status: Connecting...</div>
+    <div class="normtext">Created by <a href="https://www.youtube.com/@crypto.7562" target="_blank">Ducklife3141</a></div>
+      <div class="_errorBar_1mkqb_126" id="error" style="transform: translateY(0%);"></div>
+    </div>
+    <script>
+      function join() {
+        var cin = document.getElementById("gcode");
+        var name = document.getElementById("gname");
+        joinGame(cin.value,name.value);
+      }
+      function errorBar(error){
+	var e = document.getElementById("error");
+	e.innerText=error;
+	e.style.transform = "translateY(-100%)";
+	setTimeout(function(){e.style.transform = "translateY(0%)";},4000);
+     }
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
+    <script src="script.js"></script>
+  </body>
+</html>
